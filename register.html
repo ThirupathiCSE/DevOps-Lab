@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NRCM-CSE Event Registration Portal</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#003366,#0059b3,#0073e6);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:500px;
+    background:#ffffff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0px 8px 25px rgba(0,0,0,0.3);
+}
+
+.header{
+    background:#570066;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.logo{
+    max-width:180px;
+    max-height:180px;
+    width:auto;
+    height:auto;
+    background:white;
+    padding:5px;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.header h2{
+    font-size:24px;
+    margin-bottom:5px;
+    color:rgb(255, 0, 72);
+}
+
+.header h3{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:5px;
+    color:rgb(119, 0, 255);
+}
+
+.header p{
+    font-size:14px;
+    color:gold;
+}
+
+.form-section{
+    padding:30px;
+}
+
+.form-section h3{
+    text-align:center;
+    color:#003366;
+    margin-bottom:20px;
+}
+
+label{
+    font-weight:bold;
+    color:#333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus{
+    outline:none;
+    border-color:#0073e6;
+    box-shadow:0 0 8px rgba(0,115,230,0.4);
+}
+
+.register-btn{
+    width:100%;
+    background:#0066cc;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.register-btn:hover{
+    background:#003366;
+}
+
+.footer{
+    background:#f2f2f2;
+    text-align:center;
+    padding:12px;
+    font-size:13px;
+    color:#555;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <img src="{{ url_for('static', filename='nrcm_logo.png') }}"
+             alt="NRCM Logo"
+             class="logo">
+
+        <h2>NARASIMHA REDDY ENGINEERING COLLEGE</h2>
+        <h3>Department of Computer Science & Engineering</h3>
+        <p>Event Registration Portal</p>
+
+    </div>
+
+    <div class="form-section">
+
+        <h3>Student Registration Form</h3>
+
+        <form method="post">
+
+            <label>Student Name</label>
+            <input type="text"
+                   name="name"
+                   placeholder="Enter Full Name"
+                   required>
+
+            <label>Email Address</label>
+            <input type="email"
+                   name="email"
+                   placeholder="Enter Email ID"
+                   required>
+
+            <label>Password</label>
+            <input type="password"
+                   name="password"
+                   placeholder="Enter Password"
+                   required>
+
+            <input type="submit"
+                   value="Register Now"
+                   class="register-btn">
+
+        </form>
+
+    </div>
+
+    <div class="footer">
+        © 2026 NRCM-CSE | Student Event Registration System
+    </div>
+
+</div>
+
+</body>
+</html>
